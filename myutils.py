@@ -47,7 +47,7 @@ class Calender:
 
         for d in range(7 - first_week):
             flag = 0 # 标记和当天的状态，0 小于今天，1 等于今天 ，2 大于今天
-            if day_range[0] > now.day:
+            if day_range[0] > now.day: #[1,------31]
                 flag = 2
             elif day_range[0] == now.day:
                 flag = 1
@@ -73,7 +73,6 @@ class Calender:
                     line.append("empty")
             self.result.append(line)
 
-
     # 返回当月的日历
     def calenda_month(self):
         return self.result
@@ -89,6 +88,7 @@ class Calender:
             for day in line:
                 print(day, end=" ")
             print()
+
 
 if __name__ == '__main__':
 
