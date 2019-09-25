@@ -1,23 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ea14ef32-ef81-466f-b9a0-25e5228314b7" name="Default Changelist" comment="flask 模板系统&#10;个人信息页展示，日历课程展示">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flaskorm/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flaskorm/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flaskorm/manage.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flaskorm/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flaskorm/myutils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flaskorm/settings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flaskorm/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views_orm.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views_orm_v1.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/viewsdev.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myutils.py" beforeDir="false" afterPath="$PROJECT_DIR$/myutils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/userInfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/userInfo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_dev.py" beforeDir="false" />
+    <list default="true" id="ea14ef32-ef81-466f-b9a0-25e5228314b7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/flaskorm/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/flaskorm/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flaskorm/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/flaskorm/manage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flaskorm/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/flaskorm/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flaskorm/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/flaskorm/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flaskorm/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/flaskorm/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flaskorm/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/flaskorm/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -57,11 +47,64 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/flaskorm/templates/base.html">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/flaskorm/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="302" column="96" selection-start-line="302" selection-start-column="96" selection-end-line="302" selection-end-column="96" />
+            <state relative-caret-position="74">
+              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+              <folding>
+                <element signature="e#0#33#0" expanded="true" />
+                <element signature="e#232#577#0" />
+                <element signature="e#641#832#0" />
+                <element signature="e#851#974#0" />
+                <element signature="e#1022#1119#0" />
+                <element signature="e#1176#1207#0" />
+                <element signature="e#1252#1345#0" />
+                <element signature="e#1456#2316#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/flaskorm/__init__.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="174">
+              <caret line="23" selection-start-line="23" selection-end-line="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/flaskorm/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="368">
+              <caret line="20" column="25" lean-forward="true" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/flaskorm/manage.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="25">
+              <caret line="4" column="21" lean-forward="true" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
+              <folding>
+                <element signature="e#1#35#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/flaskorm/templates/register.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1353">
+              <caret line="60" column="20" selection-start-line="55" selection-start-column="15" selection-end-line="60" selection-end-column="20" />
+              <folding>
+                <element signature="n#style#0;n#p#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -99,6 +142,9 @@
       <find>md5</find>
       <find>login.html</find>
       <find>class=&quot;mr-2 d-none d-lg-inline text-gray-600 small&quot;</find>
+      <find>make_response</find>
+      <find>form-control form-control-user</find>
+      <find>Flask</find>
     </findStrings>
     <replaceStrings>
       <replace>&quot;/static/vendor/</replace>
@@ -132,21 +178,21 @@
         <option value="$PROJECT_DIR$/flaskORM/views.py" />
         <option value="$PROJECT_DIR$/flaskORM/models.py" />
         <option value="$PROJECT_DIR$/flaskorm/models.py" />
-        <option value="$PROJECT_DIR$/flaskorm/manage.py" />
-        <option value="$PROJECT_DIR$/flaskorm/__init__.py" />
         <option value="$PROJECT_DIR$/flaskorm/myutils.py" />
         <option value="$PROJECT_DIR$/flaskorm/templates/register.html" />
+        <option value="$PROJECT_DIR$/flaskorm/templates/base.html" />
         <option value="$PROJECT_DIR$/flaskorm/templates/login.html" />
         <option value="$PROJECT_DIR$/flaskorm/views.py" />
-        <option value="$PROJECT_DIR$/flaskorm/templates/base.html" />
+        <option value="$PROJECT_DIR$/flaskorm/__init__.py" />
+        <option value="$PROJECT_DIR$/flaskorm/settings.py" />
+        <option value="$PROJECT_DIR$/flaskorm/manage.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-96" />
-    <option name="y" value="275" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="17" />
     <option name="width" value="1598" />
-    <option name="height" value="716" />
+    <option name="height" value="860" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -184,7 +230,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/flaskORM/templates" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/flaskorm" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -361,7 +407,7 @@
       <option name="presentableId" value="Default" />
       <updated>1569201148208</updated>
       <workItem from="1569201157499" duration="34507000" />
-      <workItem from="1569308137330" duration="13099000" />
+      <workItem from="1569308137330" duration="23907000" />
     </task>
     <task id="LOCAL-00001" summary="flask 模板系统&#10;个人信息页展示，日历课程展示">
       <created>1569241129285</created>
@@ -370,24 +416,30 @@
       <option name="project" value="LOCAL" />
       <updated>1569241129286</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="完成用户登录，注册，退出，登录校验，cookie设置与删除等">
+      <created>1569330029226</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1569330029227</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47606000" />
+    <option name="totallyTimeSpent" value="58414000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="32" y="47" width="1598" height="716" extended-state="0" />
-    <editor active="true" />
+    <frame x="17" y="0" width="1598" height="860" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49892473" visible="true" weight="0.17889908" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49892473" visible="true" weight="0.17889908" />
       <window_info id="Structure" order="1" sideWeight="0.50107527" side_tool="true" weight="0.24676166" />
       <window_info id="DB Browser" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3287037" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.37593985" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39884394" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.43195266" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.5319549" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -396,7 +448,7 @@
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="DB Execution Console" order="10" />
       <window_info anchor="bottom" id="Database Changes" order="11" />
-      <window_info anchor="bottom" id="Terminal" order="12" weight="0.40751445" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="12" visible="true" weight="0.39940828" />
       <window_info anchor="bottom" id="Event Log" order="13" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="14" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -411,18 +463,41 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="flask 模板系统&#10;个人信息页展示，日历课程展示" />
-    <option name="LAST_COMMIT_MESSAGE" value="flask 模板系统&#10;个人信息页展示，日历课程展示" />
+    <MESSAGE value="完成用户登录，注册，退出，登录校验，cookie设置与删除等" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成用户登录，注册，退出，登录校验，cookie设置与删除等" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="request" language="Python" />
+        <watch expression="request.referrer" language="Python" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/FlaskWorkSpace$Flask.coverage" NAME="Flask Coverage Results" MODIFIED="1569201392830" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/FlaskWorkSpace$get_time.coverage" NAME="get_time Coverage Results" MODIFIED="1569236086668" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/FlaskWorkSpace$views_dev.coverage" NAME="views_dev Coverage Results" MODIFIED="1569243584874" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/FlaskWorkSpace$manage.coverage" NAME="manage Coverage Results" MODIFIED="1569329477492" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/flaskorm" />
+    <SUITE FILE_PATH="coverage/FlaskWorkSpace$manage.coverage" NAME="manage Coverage Results" MODIFIED="1569390916690" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/flaskorm" />
     <SUITE FILE_PATH="coverage/FlaskWorkSpace$views__1_.coverage" NAME="views (1) Coverage Results" MODIFIED="1569307726388" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/flaskORM" />
     <SUITE FILE_PATH="coverage/FlaskWorkSpace$myutils.coverage" NAME="myutils Coverage Results" MODIFIED="1569245012936" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/FlaskWorkSpace$views.coverage" NAME="views Coverage Results" MODIFIED="1569206163039" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/FlaskWorkSpace$myutils__1_.coverage" NAME="myutils (1) Coverage Results" MODIFIED="1569327223285" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/flaskorm" />
     <SUITE FILE_PATH="coverage/FlaskWorkSpace$views_orm.coverage" NAME="views_orm Coverage Results" MODIFIED="1569295692193" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="watch">
+      <expression>
+        <expression-string>request.referrer</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>request</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://D:/ProgramData/Anaconda3/envs/FlaskPath/Lib/datetime.py">
@@ -439,13 +514,6 @@
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/ProgramData/Anaconda3/envs/FlaskPath/Lib/site-packages/flask/app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="409" column="34" selection-start-line="409" selection-start-column="25" selection-end-line="409" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -550,25 +618,6 @@
     <entry file="file://$PROJECT_DIR$/flaskORM/templates/tables.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/flaskorm/main.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/flaskorm/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/flaskorm/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-225">
-          <folding>
-            <element signature="e#1#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/flaskorm/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="107">
@@ -623,34 +672,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/flaskorm/manage.py">
+    <entry file="file://D:/ProgramData/Anaconda3/envs/FlaskPath/Lib/site-packages/flask_sqlalchemy/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="126">
+          <caret line="708" column="8" selection-start-line="708" selection-start-column="8" selection-end-line="708" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/flaskorm/views.py">
+    <entry file="file://$PROJECT_DIR$/flaskorm/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="115" column="14" selection-start-line="115" selection-start-column="14" selection-end-line="115" selection-end-column="14" />
+        <state relative-caret-position="120">
+          <caret line="302" column="105" selection-start-line="302" selection-start-column="105" selection-end-line="302" selection-end-column="105" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flaskorm/templates/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="88" column="25" selection-start-line="88" selection-start-column="25" selection-end-line="88" selection-end-column="25" />
           <folding>
-            <element signature="e#0#33#0" expanded="true" />
-            <element signature="e#233#423#0" />
-            <element signature="e#862#954#0" />
-            <element signature="e#1033#1703#0" />
-            <element signature="e#1290#1793#0" />
+            <element signature="n#style#0;n#p#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/flaskorm/templates/register.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="809">
-          <caret line="60" column="20" lean-forward="true" selection-start-line="55" selection-start-column="15" selection-end-line="60" selection-end-column="20" />
+        <state relative-caret-position="1353">
+          <caret line="60" column="20" selection-start-line="55" selection-start-column="15" selection-end-line="60" selection-end-column="20" />
           <folding>
             <element signature="n#style#0;n#p#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -658,20 +707,68 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/flaskorm/templates/login.html">
+    <entry file="file://D:/ProgramData/Anaconda3/envs/FlaskPath/Lib/site-packages/flask/globals.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="43" column="115" selection-start-line="43" selection-start-column="115" selection-end-line="43" selection-end-column="115" />
+        <state relative-caret-position="267">
+          <caret line="60" selection-start-line="60" selection-end-line="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/ProgramData/Anaconda3/envs/FlaskPath/Lib/site-packages/flask/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="1934" selection-start-line="1934" selection-end-line="1934" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flaskorm/main.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://D:/ProgramData/Anaconda3/envs/FlaskPath/Lib/site-packages/flask/config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="140" column="8" selection-start-line="140" selection-start-column="8" selection-end-line="140" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flaskorm/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="20" column="25" lean-forward="true" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flaskorm/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="74">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
           <folding>
-            <element signature="n#style#0;n#p#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#0#33#0" expanded="true" />
+            <element signature="e#232#577#0" />
+            <element signature="e#641#832#0" />
+            <element signature="e#851#974#0" />
+            <element signature="e#1022#1119#0" />
+            <element signature="e#1176#1207#0" />
+            <element signature="e#1252#1345#0" />
+            <element signature="e#1456#2316#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/flaskorm/templates/base.html">
+    <entry file="file://$PROJECT_DIR$/flaskorm/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="302" column="96" selection-start-line="302" selection-start-column="96" selection-end-line="302" selection-end-column="96" />
+        <state relative-caret-position="174">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flaskorm/manage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="4" column="21" lean-forward="true" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
+          <folding>
+            <element signature="e#1#35#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

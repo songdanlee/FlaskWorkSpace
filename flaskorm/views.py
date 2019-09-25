@@ -1,17 +1,24 @@
 from flask import render_template
-from flask import jsonify
-from flask import make_response
-from flaskorm.myutils import Calender, get_password
-from flaskorm.models import Curriculum, User
-from flaskorm import app
+from flask import jsonify, session
+import functools
+from myutils import Calender, get_password
+from models import Curriculum, User, Leave, models
+from main import app,page_num
+import math
 
 def loginCheck(func):
-    def inner(*args,**kwargs):
-        user = request.cookies.get("user")
-        if user:
-            return  func(*args,**kwargs)
-        else:
-            return redirect("/login/")
+    @functools.wraps(func)
+    def inner(*args, **kwargs):
+        username = request.cookies.get("username")
+        id = request.cookies.get("id", 0)
+        session_name = session.get("username")
+        if id:
+            user = User.query.get(int(id))
+            if user:
+                if user.user_name == username and session_name == username:
+                    return func(*args, **kwargs)
+        return redirect("/login/")
+
     return inner
 
 
@@ -24,7 +31,6 @@ def index():
     curriculum_list = Curriculum.query.all()
 
     return render_template("index.html", curriculum_list=curriculum_list)
-
 
 
 def base():
@@ -51,7 +57,7 @@ def users_api():
     return jsonify(user="zs", age=19)
 
 
-from flask import request,redirect
+from flask import request, redirect
 
 
 @app.route("/register/", methods=["POST", "GET"])
@@ -95,9 +101,11 @@ def login():
                 if user:
                     db_pass = user.password
                     if db_pass == get_password(password):
-                        response = make_response(redirect('/index/'))
-
-                        response.set_cookie("user",email)
+                        response = redirect('/index/')
+                        response.set_cookie("email", user.email)
+                        response.set_cookie("username", user.user_name)
+                        response.set_cookie("id", str(user.id))
+                        session["username"] = user.user_name
                         return response
                     else:
                         errmsg = "密码不匹配"
@@ -110,12 +118,55 @@ def login():
 
     return render_template("login.html", **locals())
 
+
 @app.route("/logout/", methods=["POST", "GET"])
 def logout():
-    response = make_response(redirect('/index/'))
-    if request.cookies.get("user"):
-        response.delete_cookie("user")
+    response = redirect('/index/')
+    if request.cookies.get("id"):
+        response.delete_cookie("id")
+        response.delete_cookie("email")
+        response.delete_cookie("username")
+    if session.get("username"):
+        session.pop("username")
     return response
+
+
+@app.route("/request_label/", methods=["POST", "GET"])
+@loginCheck
+def request_level():
+    if request.method == "POST":
+        form = request.form
+        level = Leave()
+        level.request_id = request.cookies.get("id")
+        level.request_name = form.get("request_name")
+        level.request_type = form.get("request_type")
+        level.start_time = form.get("start_time")
+        level.end_time = form.get("end_time")
+        level.phone = form.get("phone")
+        level.description = form.get("request_description")
+        level.status = 0
+        level.save()
+
+        return redirect("//")
+
+    return render_template("request_leave.html")
+
+
+@app.route("/leave_list/<int:page>/", methods=["POST", "GET"])
+@loginCheck
+def leave_list(page):
+    # 0页  1-5
+    # 1页  6-10
+    # 2页  11-15
+    id = int(request.cookies.get("id"))
+    offsetnum = (page - 1) * page_num
+    leaves = Leave.query.filter_by(request_id=id).order_by(models.desc("id"))  # 获取该用户所有假条
+    page_total = math.ceil(leaves.count()/page_num)  # 总页数
+    page_list = range(1,page_total+1)  # 页表页码
+
+    leaves = leaves.offset(offsetnum).limit(page_num) # 获取当前页的数据
+    return render_template("leave_list.html", **locals())
+
 
 if __name__ == '__main__':
     app.run(host="127.0.0.1", port=8000, debug=True)

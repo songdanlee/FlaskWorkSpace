@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  列表
+{% endblock %}
+
+
+
+{% block label %}
+    考勤列表页
+    <a href="/request_label/" class="btn btn-primary" style="float: right;margin-right: 5%">请假</a>
+{% endblock %}
+
+{% block content %}
+
+
+        <table class="table table-bordered">
+
+            <tr>
+                <th>请假人</th>
+                <th>请假类型</th>
+                <th>起始时间</th>
+                <th>结束时间</th>
+                <th>状态</th>
+            <tr>
+
+            {% for leave in leaves %}
+                <tr>
+                    <td>{{ leave.request_name }}</td>
+                    <td>{{ leave.request_type }}</td>
+                    <td>{{ leave.start_time }}</td>
+                    <td>{{ leave.end_time }}</td>
+                    <td>
+                        {% if leave.status == 0 %}
+                            申请
+                        {% elif leave.status == 1 %}
+                            批准
+                        {% elif leave.status == 2 %}
+                            驳回
+                         {% elif leave.status == 3 %}
+                            销假
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+        <ul class="pagination" style="float: right;margin-right: 100px;">
+        <li class="paginate_button page-item previous " id="dataTable_previous">
+            <a href="/leave_list/1/" aria-controls="dataTable" data-dt-idx="0" tabindex="0" class="page-link">首页</a>
+        </li>
+
+        {% if page != 1 %}
+           <li class="paginate_button page-item previous " id="dataTable_previous">
+                <a href="/leave_list/{{ page-1 }}/" aria-controls="dataTable" data-dt-idx="0" tabindex="0" class="page-link">上一页</a>
+           </li>
+        {% endif %}
+
+        {% for p in page_list %}
+            <li class="paginate_button page-item">
+                 {% if p == page %}
+                      <a href="/leave_list/{{ p }}/" aria-controls="dataTable" data-dt-idx="1" tabindex="0" class="page-link active">{{ p }}</a>
+                 {% else %}
+                     <a href="/leave_list/{{ p }}/" aria-controls="dataTable" data-dt-idx="1" tabindex="0" class="page-link">{{ p }}</a>
+                 {% endif %}
+           </li>
+        {% endfor %}
+
+        {% if page != page_total %}
+           <li class="paginate_button page-item next" id="dataTable_next">
+                <a href="/leave_list/{{ page+1 }}/" aria-controls="dataTable" data-dt-idx="0" tabindex="0" class="page-link">下一页</a>
+           </li>
+        {% endif %}
+
+        <li class="paginate_button page-item next" id="dataTable_next"><a href="/leave_list/{{ page_total }}/" aria-controls="dataTable" data-dt-idx="7" tabindex="0" class="page-link">尾页</a></li></ul>
+
+
+
+{% endblock %}
+

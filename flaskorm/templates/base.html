@@ -53,20 +53,20 @@
 
       <!-- Heading -->
       <div class="sidebar-heading">
-        Interface
+        学员管理
       </div>
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-fw fa-cog"></i>
-          <span>Components</span>
+          <span>考勤管理</span>
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Custom Components:</h6>
-            <a class="collapse-item" href="buttons.html">Buttons</a>
-            <a class="collapse-item" href="cards.html">Cards</a>
+            <h6 class="collapse-header">考勤列表</h6>
+            <a class="collapse-item" href="buttons.html">违规情况</a>
+            <a class="collapse-item" href="/leave_list/1/">考勤统计</a>
           </div>
         </div>
       </li>
@@ -75,15 +75,13 @@
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
           <i class="fas fa-fw fa-wrench"></i>
-          <span>Utilities</span>
+          <span>班级课程管理</span>
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Custom Utilities:</h6>
-            <a class="collapse-item" href="utilities-color.html">Colors</a>
-            <a class="collapse-item" href="utilities-border.html">Borders</a>
-            <a class="collapse-item" href="utilities-animation.html">Animations</a>
-            <a class="collapse-item" href="utilities-other.html">Other</a>
+            <a class="collapse-item" href="utilities-color.html">课程管理</a>
+            <a class="collapse-item" href="utilities-border.html">班级管理</a>
           </div>
         </div>
       </li>
@@ -93,41 +91,46 @@
 
       <!-- Heading -->
       <div class="sidebar-heading">
-        Addons
+        考试管理
       </div>
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
           <i class="fas fa-fw fa-folder"></i>
-          <span>Pages</span>
+          <span>考试管理</span>
         </a>
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Login Screens:</h6>
-            <a class="collapse-item" href="login.html">Login</a>
-            <a class="collapse-item" href="register.html">Register</a>
-            <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-            <div class="collapse-divider"></div>
-            <h6 class="collapse-header">Other Pages:</h6>
-            <a class="collapse-item" href="404.html">404 Page</a>
-            <a class="collapse-item active" href="blank.html">Blank Page</a>
+            <h6 class="collapse-header">考题管理</h6>
+            <a class="collapse-item" href="login.html">试卷管理</a>
+            <a class="collapse-item" href="register.html">成绩统计</a>
           </div>
         </div>
       </li>
 
-      <!-- Nav Item - Charts -->
-      <li class="nav-item">
-        <a class="nav-link" href="charts.html">
-          <i class="fas fa-fw fa-chart-area"></i>
-          <span>Charts</span></a>
-      </li>
+      <!-- Divider -->
+      <hr class="sidebar-divider d-none d-md-block">
 
-      <!-- Nav Item - Tables -->
+           <!-- Heading -->
+      <div class="sidebar-heading">
+        通知系统
+      </div>
+
+      <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link" href="tables.html">
-          <i class="fas fa-fw fa-table"></i>
-          <span>Tables</span></a>
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTeach" aria-expanded="false" aria-controls="collapsePages">
+          <i class="fas fa-fw fa-folder"></i>
+          <span>教学通知</span>
+        </a>
+        <div id="collapseTeach" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">通知类型:</h6>
+            <a class="collapse-item" href="login.html">教学任务发布</a>
+            <a class="collapse-item" href="register.html">放假通知</a>
+            <a class="collapse-item" href="forgot-password.html">其他通知</a>
+          </div>
+        </div>
       </li>
 
       <!-- Divider -->
@@ -300,7 +303,7 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{request.cookies.get('user')}}</span>
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{request.cookies.get('username')}}</span>
                 <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
               </a>
               <!-- Dropdown - User Information -->
@@ -333,7 +336,7 @@
         <!-- Begin Page Content -->
         <div class="container-fluid">
           <!-- Page Heading -->
-          <h1 class="h3 mb-4 text-gray-800">{% block lable %}首页{% endblock %}</h1>
+          <h1 class="h3 mb-4 text-gray-800">{% block label %}首页{% endblock %}</h1>
            {% block content %}
 
           {% endblock %}
