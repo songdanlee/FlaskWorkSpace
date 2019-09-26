@@ -1,9 +1,9 @@
 from flask import render_template
 from flask import jsonify, session
 import functools
-from myutils import Calender, get_password
+from myutils import Calender, get_password, Pagintor
 from models import Curriculum, User, Leave, models
-from main import app,page_num
+from main import app,csrf
 import math
 
 def loginCheck(func):
@@ -61,6 +61,7 @@ from flask import request, redirect
 
 
 @app.route("/register/", methods=["POST", "GET"])
+@csrf.exempt
 def register():
     if request.method == "POST":
         username = request.form.get("username")
@@ -88,7 +89,7 @@ def register():
 
     return render_template("register.html", **locals())
 
-
+@csrf.exempt
 @app.route("/login/", methods=["POST", "GET"])
 @app.route("/", methods=["POST", "GET"])
 def login():
@@ -130,7 +131,7 @@ def logout():
         session.pop("username")
     return response
 
-
+@csrf.exempt
 @app.route("/request_label/", methods=["POST", "GET"])
 @loginCheck
 def request_level():
@@ -147,7 +148,7 @@ def request_level():
         level.status = 0
         level.save()
 
-        return redirect("//")
+        return redirect("/leave_list/1/")
 
     return render_template("request_leave.html")
 
@@ -158,15 +159,78 @@ def leave_list(page):
     # 0页  1-5
     # 1页  6-10
     # 2页  11-15
-    id = int(request.cookies.get("id"))
-    offsetnum = (page - 1) * page_num
-    leaves = Leave.query.filter_by(request_id=id).order_by(models.desc("id"))  # 获取该用户所有假条
-    page_total = math.ceil(leaves.count()/page_num)  # 总页数
-    page_list = range(1,page_total+1)  # 页表页码
+    # id = int(request.cookies.get("id"))
+    # offsetnum = (page - 1) * page_num
+    # leaves = Leave.query.filter_by(request_id=id).order_by(models.desc("id"))  # 获取该用户所有假条
+    # page_total = math.ceil(leaves.count()/page_num)  # 总页数
+    # page_list = range(1,page_total+1)  # 页表页码
+    #
+    # leaves = leaves.offset(offsetnum).limit(page_num) # 获取当前页的数据
 
-    leaves = leaves.offset(offsetnum).limit(page_num) # 获取当前页的数据
+    id = int(request.cookies.get("id"))
+    leaves = Leave.query.filter_by(request_id=id).order_by(models.desc("id"))
+    pagintor = Pagintor(leaves,3)
+
+    page_list = pagintor.page_range # 总页码列表
+
+    leaves = pagintor.page_data(page)
+
     return render_template("leave_list.html", **locals())
 
+
+@app.route("/cancle_leave/", methods=["POST", "GET"])
+@loginCheck
+def cancle_leave():
+    if request.method == "POST":
+       id = request.form.get("id")
+       id = int(id)
+       leave = Leave.query.get(id)
+       leave.delete()
+    elif request.method == "GET":
+        id = request.args.get("id")
+        id = int(id)
+        leave = Leave.query.get(id)
+        leave.delete()
+
+    return jsonify({"data":"删除成功"})
+
+
+
+
+
+from forms import TaskForm
+
+@app.route("/add_task/",methods=["GET","POST"])
+def add_task():
+    task = TaskForm()
+    if request.method == "POST":
+        if task.validate_on_submit(): # 有效的post请求
+            from_data = task.data  # 校验成功
+
+            time = from_data.get("time")
+            public = from_data.get("public")
+            description = from_data.get("description")
+            name = from_data.get("name")
+        else:
+            error = task.errors #校验失败
+            print(error)
+    return render_template("add_task.html",**locals())
+
+from forms import LoginForm
+
+
+@app.route("/pwd/", methods=["GET", "POST"])
+def pwd(): # 表单类详细使用
+    #生成表单对象，传入模板
+     form = LoginForm()
+     if request.method == "POST":
+         if form.validate_on_submit():
+            #用户返回信息
+            data = form.data
+            print(data)
+         else:
+             print(form.errors)
+     return render_template("pwd.html", form=form)
 
 if __name__ == '__main__':
     app.run(host="127.0.0.1", port=8000, debug=True)

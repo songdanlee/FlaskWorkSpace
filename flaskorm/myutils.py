@@ -1,5 +1,7 @@
 import datetime
 import hashlib
+import math
+
 
 class Calender:
 
@@ -46,13 +48,13 @@ class Calender:
         line1 = ["empty" for e in range(first_week)]
 
         for d in range(7 - first_week):
-            flag = 0 # 标记和当天的状态，0 小于今天，1 等于今天 ，2 大于今天
-            if day_range[0] > now.day: #[1,------31]
+            flag = 0  # 标记和当天的状态，0 小于今天，1 等于今天 ，2 大于今天
+            if day_range[0] > now.day:  # [1,------31]
                 flag = 2
             elif day_range[0] == now.day:
                 flag = 1
             line1.append(
-                {"day":str(day_range.pop(0)),"course":["数据分析"],"flag":flag}
+                {"day": str(day_range.pop(0)), "course": ["数据分析"], "flag": flag}
             )
         self.result.append(line1)
 
@@ -67,7 +69,7 @@ class Calender:
                     elif day_range[0] == now.day:
                         flag = 1
                     line.append(
-                        {"day":str(day_range.pop(0)),"course":["数据分析"],"flag":flag}
+                        {"day": str(day_range.pop(0)), "course": ["数据分析"], "flag": flag}
                     )
                 else:
                     line.append("empty")
@@ -78,7 +80,7 @@ class Calender:
         return self.result
 
     # 计算闰年，闰年返回1
-    def leep_year(self,year):
+    def leep_year(self, year):
         return (year % 400 == 0) or (year % 4 == 0 and year % 100 == 0)
 
     def print_result(self):
@@ -95,7 +97,51 @@ def get_password(password):
     md5.update(password.encode())
     return md5.hexdigest()
 
-if __name__ == '__main__':
 
-    #Calender().print_result()
+class Pagintor:
+
+    def __init__(self, query_set, page_size):
+        self.page_size = page_size
+        self.query_set = query_set
+
+        self.num_count = query_set.count()  # 所有数据个数
+        total_page = math.ceil(self.num_count / self.page_size)  # 总页数
+        self.page_range = range(1, total_page + 1) # 页码列表
+
+        self.has_pre = False  # 是否有上一页
+        self.has_next = False  # 是否有下一页
+
+        self.previous_page_num = 1 # 前一页
+        self.next_page_num = total_page # 后一页
+
+    def page_data(self, page):
+        """
+        返回指定页对应的数据
+            # 0页  1-5
+            # 1页  6-10
+            # 2页  11-15
+        """
+        if (not self.page_range) or page > self.page_range[-1] :
+            return []
+
+        offsetnum = (page - 1) * self.page_size  # 页码对应偏移量
+        leaves = self.query_set.offset(offsetnum).limit(self.page_size)  # 获取当前页的数据
+
+        if page == 1:
+            self.has_pre = False
+        else:
+            self.has_pre = True
+            self.previous_page_num = page - 1
+
+        if page == self.page_range[-1]:
+            self.has_next = False
+        else:
+            self.has_next = True
+            self.next_page_num = page + 1
+
+        return leaves
+
+
+if __name__ == '__main__':
+    # Calender().print_result()
     print(get_password("1234"))

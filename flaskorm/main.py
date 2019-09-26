@@ -1,6 +1,7 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 import pymysql
+from flask_wtf import CSRFProtect # 导入csrf保护
 
 pymysql.install_as_MySQLdb()
 
@@ -24,5 +25,5 @@ app.config.from_object("settings.Config")
 
 models = SQLAlchemy(app)
 
-# 每页个数
-page_num = 5
+csrf = CSRFProtect(app) #使用csrf保护
+
