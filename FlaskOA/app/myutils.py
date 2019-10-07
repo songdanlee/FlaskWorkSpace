@@ -4,7 +4,9 @@ import math
 
 
 class Calender:
-
+    """
+    课程表类
+    """
     # 如果一号周周一那么第一行1-7号   0
     # 如果一号周周二那么第一行empty*1+1-6号  1
     # 如果一号周周三那么第一行empty*2+1-5号  2
@@ -75,7 +77,7 @@ class Calender:
                     line.append("empty")
             self.result.append(line)
 
-    # 返回当月的日历
+    # 返回当月的日历 对应的课程
     def calenda_month(self):
         return self.result
 

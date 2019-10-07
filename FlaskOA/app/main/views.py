@@ -48,6 +48,9 @@ def base():
 
 @main.route("/userinfo/")
 def userInfo():
+    """
+    用户中心，课程
+    """
     caleda_month = Calender().calenda_month()
     return render_template("userinfo.html", **locals())
 
