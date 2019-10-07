@@ -282,6 +282,9 @@ def picture():
 
 @api.resource("/Api/leave/")
 class LeaveApi(Resource):
+    """
+    restful接口开发，处理假条
+    """
 
     def __init__(self):
         super(LeaveApi, self).__init__()
@@ -292,6 +295,10 @@ class LeaveApi(Resource):
         }
 
     def get(self):
+        """
+        如果传入id,返回指定id假条
+        否则，返回所有
+        """
         self.result["method"] = "get"
         data = request.args
         id = data.get("id")
@@ -331,6 +338,9 @@ class LeaveApi(Resource):
         return resu
 
     def post(self):
+        """
+        保存假条到数据库
+        """
         self.result["method"] = "post"
         data = request.form
 
@@ -375,6 +385,9 @@ class LeaveApi(Resource):
     #     return self.result
 
     def put(self):
+        """
+        修改假条信息
+        """
         self.result["method"] = "put"
 
         data = request.form
@@ -390,6 +403,9 @@ class LeaveApi(Resource):
         return self.result
 
     def delete(self):
+        """
+        删除假条信息
+        """
         self.result["method"] = "delete"
         data = request.form
         id = data.get("id")
