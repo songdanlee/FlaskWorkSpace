@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}
+首页-index
+{% endblock %}
+
+{% block content %}
+    {% for p in curriculum_list %}
+        <p>{{ p.c_name }}   {{ p.c_time }}</p>
+    {%  endfor %}
+{% endblock %}
