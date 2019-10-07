@@ -39,6 +39,7 @@ class User(BaseModel):
 
 
 class Leave(BaseModel):
+
     __tablename__ = "leave"
     request_id = models.Column(models.Integer)# 请假人id
     request_name = models.Column(models.String(32))# 请假人姓名
@@ -49,3 +50,6 @@ class Leave(BaseModel):
     phone = models.Column(models.String(32))# 联系方式
     status = models.Column(models.Integer)# 假条状态 0 申请  1批准  2驳回 3销假
 
+
+class Picture(BaseModel):
+    photo = models.Column(models.String(32))# 联系方式

@@ -1,10 +1,15 @@
-from flask import render_template
-from flask import jsonify, session
+import os
 import functools
-from myutils import Calender, get_password, Pagintor
+
+from flask import render_template
+from flask_restful import Resource
+from flask import jsonify, session
 from models import Curriculum, User, Leave, models
-from main import app,csrf
-import math
+
+from main import api
+from main import app  # ,csrf
+from myutils import Calender, get_password, Pagintor
+
 
 def loginCheck(func):
     @functools.wraps(func)
@@ -61,7 +66,7 @@ from flask import request, redirect
 
 
 @app.route("/register/", methods=["POST", "GET"])
-@csrf.exempt
+# @csrf.exempt
 def register():
     if request.method == "POST":
         username = request.form.get("username")
@@ -89,7 +94,8 @@ def register():
 
     return render_template("register.html", **locals())
 
-@csrf.exempt
+
+# @csrf.exempt
 @app.route("/login/", methods=["POST", "GET"])
 @app.route("/", methods=["POST", "GET"])
 def login():
@@ -131,7 +137,8 @@ def logout():
         session.pop("username")
     return response
 
-@csrf.exempt
+
+# @csrf.exempt
 @app.route("/request_label/", methods=["POST", "GET"])
 @loginCheck
 def request_level():
@@ -169,9 +176,9 @@ def leave_list(page):
 
     id = int(request.cookies.get("id"))
     leaves = Leave.query.filter_by(request_id=id).order_by(models.desc("id"))
-    pagintor = Pagintor(leaves,3)
+    pagintor = Pagintor(leaves, 3)
 
-    page_list = pagintor.page_range # 总页码列表
+    page_list = pagintor.page_range  # 总页码列表
 
     leaves = pagintor.page_data(page)
 
@@ -182,29 +189,27 @@ def leave_list(page):
 @loginCheck
 def cancle_leave():
     if request.method == "POST":
-       id = request.form.get("id")
-       id = int(id)
-       leave = Leave.query.get(id)
-       leave.delete()
+        id = request.form.get("id")
+        id = int(id)
+        leave = Leave.query.get(id)
+        leave.delete()
     elif request.method == "GET":
         id = request.args.get("id")
         id = int(id)
         leave = Leave.query.get(id)
         leave.delete()
 
-    return jsonify({"data":"删除成功"})
-
-
-
+    return jsonify({"data": "删除成功"})
 
 
 from forms import TaskForm
 
-@app.route("/add_task/",methods=["GET","POST"])
+
+@app.route("/add_task/", methods=["GET", "POST"])
 def add_task():
     task = TaskForm()
     if request.method == "POST":
-        if task.validate_on_submit(): # 有效的post请求
+        if task.validate_on_submit():  # 有效的post请求
             from_data = task.data  # 校验成功
 
             time = from_data.get("time")
@@ -212,25 +217,180 @@ def add_task():
             description = from_data.get("description")
             name = from_data.get("name")
         else:
-            error = task.errors #校验失败
+            error = task.errors  # 校验失败
             print(error)
-    return render_template("add_task.html",**locals())
+    return render_template("add_task.html", **locals())
+
 
 from forms import LoginForm
 
 
 @app.route("/pwd/", methods=["GET", "POST"])
-def pwd(): # 表单类详细使用
-    #生成表单对象，传入模板
-     form = LoginForm()
-     if request.method == "POST":
-         if form.validate_on_submit():
-            #用户返回信息
+def pwd():  # 表单类详细使用
+    # 生成表单对象，传入模板
+    form = LoginForm()
+    if request.method == "POST":
+        if form.validate_on_submit():
+            # 用户返回信息
             data = form.data
             print(data)
-         else:
-             print(form.errors)
-     return render_template("pwd.html", form=form)
+        else:
+            print(form.errors)
+    return render_template("pwd.html", form=form)
+
+
+from settings import STATIC_FILES_DIR
+
+
+@app.route("/pic/", methods=["GET", "POST"])
+def picture():
+    if request.method == "POST":
+        pic = request.files.get("photo")
+        """
+        print([i for i in dir(pic) if not i.startswith("_")])
+        print("-"*20)
+        print(pic.content_length)
+        print("-" * 20)
+        print(pic.content_type)
+        print("-" * 20)
+        print(pic.filename)
+        print("-" * 20)
+        print(pic.headers)
+        print("-" * 20)
+        print(pic.mimetype)
+        print("-" * 20)
+        print(pic.mimetype_params)
+        print("-" * 20)
+        print(pic.name)
+        print("-" * 20)
+        """
+        filepath = "img/%s" % pic.filename
+        savepath = os.path.join(STATIC_FILES_DIR, filepath)
+
+        pic.save(savepath)
+
+    return render_template("picture.html")
+
+
+@api.resource("/Api/leave/")
+class LeaveApi(Resource):
+
+    def __init__(self):
+        super(LeaveApi, self).__init__()
+        self.result = {
+            "version": '1.0',
+            "method": "",
+            "data": ""
+        }
+
+    def get(self):
+        self.result["method"] = "get"
+        data = request.args
+        id = data.get("id")
+        key = data.get("filter")
+        value = data.get("value")
+
+        if id:
+            leave = Leave.query.get(int(id))
+            self.result["data"] = self.save_data(leave)
+        elif key and value:
+
+            leaves = Leave.query.filter_by(request_type=value)
+
+            res = []
+            for leave in leaves:
+                res.append(self.save_data(leave))
+            self.result["data"] = res
+
+        else:
+            leaves = Leave.query.all()
+            res = []
+            for leave in leaves:
+                res.append(self.save_data(leave))
+            self.result["data"] = res
+
+        return self.result
+
+    def save_data(self, leave):
+        resu = {
+            "request_name": leave.request_name,
+            "request_type": leave.request_type,
+            "start_time": leave.start_time,
+            "end_time": leave.end_time,
+            "description": leave.description,
+            "phone": leave.phone
+        }
+        return resu
+
+    def post(self):
+        self.result["method"] = "post"
+        data = request.form
+
+        request_id = data.get("request_id")
+        request_name = data.get("request_name")
+        request_type = data.get("request_type")
+        start_time = data.get("start_time")
+        end_time = data.get("end_time")
+        description = data.get("description")
+        phone = data.get("phone")
+
+        leave = Leave()
+
+        leave.request_id = request_id
+        leave.request_name = request_name
+        leave.request_type = request_type
+        leave.start_time = start_time
+        leave.end_time = end_time
+        leave.description = description
+        leave.phone = phone
+        leave.save()
+
+        self.result["data"] = self.save_data(leave)
+        return self.result
+
+    # def put(self):
+    #     self.result["method"] = "put"
+    #
+    #     data = request.form
+    #     id = data.get("id")
+    #     leave = Leave.query.get(int(id))
+    #     if leave:
+    #         for key, v in data.items():
+    #             if key != "id":
+    #                 setattr(leave, key, v)
+    #         leave.save()
+    #
+    #         self.result["data"] = self.save_data(leave)
+    #     else:
+    #         self.result["data"] = "没有这个id的数据"
+    #
+    #     return self.result
+
+    def put(self):
+        self.result["method"] = "put"
+
+        data = request.form
+        id = data.get("id")
+        leaves = Leave.query.filter_by(id=int(id))
+        if leaves.count() > 0:
+            leaves.update(data)
+            for leave in leaves:
+                leave.save()
+            self.result["data"] = self.save_data(leave)
+        else:
+            self.result["data"] = "没有id为%s的数据" %id
+        return self.result
+
+    def delete(self):
+        self.result["method"] = "delete"
+        data = request.form
+        id = data.get("id")
+        leave = Leave.query.get(int(id))
+        leave.delete()
+
+        self.result["data"] = "id为%s的数据，已经删除" % id
+        return self.result
+
 
 if __name__ == '__main__':
     app.run(host="127.0.0.1", port=8000, debug=True)
