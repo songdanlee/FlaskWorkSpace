@@ -144,6 +144,9 @@ def logout():
 @main.route("/request_label/", methods=["POST", "GET"])
 @loginCheck
 def request_level():
+    """
+    请假功能，get请求返回页面，post请求，生成假条，保存到数据库
+    """
     if request.method == "POST":
         form = request.form
         level = Leave()

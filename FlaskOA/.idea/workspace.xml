@@ -43,7 +43,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/manage.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="149">
@@ -51,6 +51,15 @@
               <folding>
                 <element signature="e#0#33#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/main/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="672">
+              <caret line="164" column="41" selection-start-line="164" selection-start-column="28" selection-end-line="164" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -86,11 +95,11 @@
         <option value="$PROJECT_DIR$/../FlaskWorkSpace/flaskorm/forms.py" />
         <option value="$PROJECT_DIR$/../FlaskWorkSpace/flaskorm/manage.py" />
         <option value="$PROJECT_DIR$/app/models.py" />
-        <option value="$PROJECT_DIR$/app/main/views.py" />
         <option value="$PROJECT_DIR$/app/__init__.py" />
         <option value="$USER_HOME$/Desktop/pyscript/test.py" />
         <option value="$USER_HOME$/Desktop/pyscript/test.html" />
         <option value="$PROJECT_DIR$/manage.py" />
+        <option value="$PROJECT_DIR$/app/main/views.py" />
       </list>
     </option>
   </component>
@@ -111,6 +120,17 @@
             <path>
               <item name="FlaskOA" type="b2602c69:ProjectViewProjectNode" />
               <item name="FlaskOA" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="FlaskOA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FlaskOA" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="FlaskOA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FlaskOA" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -222,12 +242,12 @@
       <workItem from="1569723961095" duration="2055000" />
       <workItem from="1569726027456" duration="64000" />
       <workItem from="1569726097994" duration="12133000" />
-      <workItem from="1570429844495" duration="3888000" />
+      <workItem from="1570429844495" duration="4139000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18140000" />
+    <option name="totallyTimeSpent" value="18391000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -240,6 +260,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20466322" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -255,7 +276,7 @@
       <window_info anchor="bottom" id="Event Log" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="7" />
       <window_info anchor="bottom" id="Find" order="8" />
-      <window_info active="true" anchor="bottom" id="Run" order="9" visible="true" weight="0.5736994" />
+      <window_info active="true" anchor="bottom" id="Run" order="9" visible="true" weight="0.26734105" />
       <window_info anchor="bottom" id="Debug" order="10" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
@@ -396,19 +417,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/main/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="211" column="16" lean-forward="true" selection-start-line="211" selection-start-column="16" selection-end-line="211" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-            <element signature="e#369#820#0" />
-            <element signature="e#875#1066#0" />
-            <element signature="e#1085#1208#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/main/forms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
@@ -449,6 +457,13 @@
           <folding>
             <element signature="e#0#33#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/main/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="672">
+          <caret line="164" column="41" selection-start-line="164" selection-start-column="28" selection-end-line="164" selection-end-column="41" />
         </state>
       </provider>
     </entry>
