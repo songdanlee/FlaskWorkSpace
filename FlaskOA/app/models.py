@@ -52,4 +52,4 @@ class Leave(BaseModel):
 
 
 class Picture(BaseModel):
-    photo = models.Column(models.String(32))# 联系方式
+    photo = models.Column(models.String(32))
