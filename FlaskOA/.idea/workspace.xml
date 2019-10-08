@@ -134,10 +134,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="486" />
-    <option name="y" value="46" />
+    <option name="x" value="-222" />
+    <option name="y" value="50" />
     <option name="width" value="1537" />
-    <option name="height" value="828" />
+    <option name="height" value="827" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -296,12 +296,12 @@
       <workItem from="1569723961095" duration="2055000" />
       <workItem from="1569726027456" duration="64000" />
       <workItem from="1569726097994" duration="12133000" />
-      <workItem from="1570429844495" duration="19383000" />
+      <workItem from="1570429844495" duration="19876000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33635000" />
+    <option name="totallyTimeSpent" value="34128000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -313,8 +313,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="13" y="251" width="1537" height="828" extended-state="0" />
-    <editor active="true" />
+    <frame x="-222" y="50" width="1537" height="827" extended-state="0" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2443686" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -326,7 +325,7 @@
       <window_info anchor="bottom" id="Database Changes" order="2" />
       <window_info anchor="bottom" id="Version Control" order="3" />
       <window_info anchor="bottom" id="Python Console" order="4" />
-      <window_info anchor="bottom" id="Terminal" order="5" visible="true" weight="0.060559005" />
+      <window_info anchor="bottom" id="Terminal" order="5" visible="true" weight="0.060653187" />
       <window_info anchor="bottom" id="Event Log" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="7" />
       <window_info anchor="bottom" id="Find" order="8" />
